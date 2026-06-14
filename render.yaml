@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: flatmates-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: ./data/expenses.db
+      - key: CORS_ORIGIN
+        value: https://flatmates-app.vercel.app
+    disk:
+      name: sqlite-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
