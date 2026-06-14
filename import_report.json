@@ -1,27 +1,15 @@
 {
-  "summary": {
-    "filename": "expenses_export.csv",
-    "total_rows": 42,
-    "accepted_rows": 40,
-    "skipped_rows": 2
-  },
-  "actions_taken": [
-    { "row": 6, "item": "dinner - marina bites", "anomaly": "EXACT_DUPLICATE", "action": "SKIPPED", "reason": "Excluded as duplicate of Row 5" },
-    { "row": 7, "item": "Electricity Feb", "anomaly": "AMOUNT_WITH_COMMA", "action": "ACCEPTED", "fix": "Auto-stripped comma (1,200 -> 1200)" },
-    { "row": 9, "item": "Movie night snacks", "anomaly": "NAME_CASE_MISMATCH", "action": "ACCEPTED", "fix": "Auto-capitalised 'priya' -> 'Priya'" },
-    { "row": 10, "item": "Cylinder refill", "anomaly": "EXCESS_DECIMAL", "action": "ACCEPTED", "fix": "Auto-rounded 899.995 -> 900" },
-    { "row": 11, "item": "Groceries DMart", "anomaly": "FUZZY_PAYER", "action": "ACCEPTED", "fix": "Resolved 'Priya S' to 'Priya'" },
-    { "row": 13, "item": "House cleaning supplies", "anomaly": "MISSING_PAYER", "action": "ACCEPTED", "fix": "Assigned missing payer to 'Rohan'" },
-    { "row": 14, "item": "Rohan paid Aisha back", "anomaly": "IS_SETTLEMENT", "action": "ACCEPTED", "fix": "Reclassified as Direct Settlement" },
-    { "row": 15, "item": "Pizza Friday", "anomaly": "PERCENTAGE_ERROR", "action": "ACCEPTED", "fix": "Adjusted Meera's split percentage to 10% to sum to 100%" },
-    { "row": 16, "item": "March rent", "anomaly": "AMBIGUOUS_DATE", "action": "ACCEPTED", "fix": "Resolved date to 2026-03-01 (DD/MM/YYYY)" },
-    { "row": 23, "item": "Parasailing", "anomaly": "UNKNOWN_GUEST", "action": "ACCEPTED", "fix": "Created guest 'Kabir', excluded from split share" },
-    { "row": 26, "item": "Parasailing refund", "anomaly": "NEGATIVE_AMOUNT", "action": "ACCEPTED", "fix": "Auto-classified refund (-30 USD)" },
-    { "row": 27, "item": "Airport cab", "anomaly": "DATE_NO_YEAR", "action": "ACCEPTED", "fix": "Inferred year as 2026" },
-    { "row": 28, "item": "Groceries DMart", "anomaly": "MISSING_CURRENCY", "action": "ACCEPTED", "fix": "Defaulted missing currency to INR" },
-    { "row": 31, "item": "Dinner order Swiggy", "anomaly": "ZERO_AMOUNT", "action": "SKIPPED", "reason": "Zero amount entry" },
-    { "row": 36, "item": "Groceries BigBasket", "anomaly": "INACTIVE_MEMBER", "action": "ACCEPTED", "fix": "Excluded inactive Meera from split (Aisha, Rohan, Priya only)" },
-    { "row": 38, "item": "Sam deposit share", "anomaly": "POSSIBLE_SETTLEMENT", "action": "ACCEPTED", "fix": "Reclassified as Direct Settlement" },
-    { "row": 42, "item": "Furniture", "anomaly": "CONFLICTING_SPLIT", "action": "ACCEPTED", "fix": "Enforced equal split among participants" }
+  "summary": { "filename": "expenses_export.csv", "total_rows": 42, "accepted_rows": 40, "skipped_rows": 2 },
+  "skipped_rows_detail": [
+    { "row": 6, "item": "dinner - marina bites", "anomaly": "EXACT_DUPLICATE", "reason": "Duplicate of Row 5" },
+    { "row": 31, "item": "Dinner order Swiggy", "anomaly": "ZERO_AMOUNT", "reason": "Zero amount entry" }
+  ],
+  "major_fixes": [
+    { "row": 7, "item": "Electricity Feb", "fix": "Auto-stripped comma (1,200 -> 1200)" },
+    { "row": 11, "item": "Groceries DMart", "fix": "Resolved 'Priya S' fuzzy match to 'Priya'" },
+    { "row": 13, "item": "House cleaning supplies", "fix": "Assigned missing payer to 'Rohan'" },
+    { "row": 14, "item": "Rohan paid Aisha back", "fix": "Reclassified as Direct Settlement" },
+    { "row": 15, "item": "Pizza Friday", "fix": "Adjusted Meera to 10% to sum splits to 100%" },
+    { "row": 36, "item": "Groceries BigBasket", "fix": "Excluded inactive Meera from April splits" }
   ]
 }
