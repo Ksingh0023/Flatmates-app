@@ -22,8 +22,8 @@ A full-stack shared expenses app built for a flat-sharing group with changing me
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/flatmates-app.git
-cd flatmates-app
+git clone https://github.com/Ksingh0023/Flatmates-app.git
+cd Flatmates-app
 ```
 
 ### 2. Backend

@@ -43,7 +43,7 @@ Before deploying, you must host the code on your GitHub account.
 git branch -M main
 
 # Link your local repository to your remote GitHub repository
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/flatmates-app.git
+git remote add origin https://github.com/Ksingh0023/Flatmates-app.git
 
 # Push the code to GitHub
 git push -u origin main
