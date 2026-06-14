@@ -20,12 +20,18 @@ router.post('/parse', requireAuth, upload.single('file'), (req, res) => {
 
   let rows;
   try {
-    rows = parse(req.file.buffer.toString('utf8'), {
+    // Auto-detect delimiter: try tab first (the provided file is TSV), fall back to comma
+    const rawText = req.file.buffer.toString('utf8');
+    const firstLine = rawText.split('\n')[0];
+    const delimiter = firstLine.includes('\t') ? '\t' : ',';
+
+    rows = parse(rawText, {
       columns: true,
       skip_empty_lines: true,
       trim: true,
       relax_quotes: true,
       relax_column_count: true,
+      delimiter,
     });
   } catch (err) {
     return res.status(400).json({ error: `CSV parse error: ${err.message}` });
