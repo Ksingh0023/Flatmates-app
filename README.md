@@ -82,9 +82,5 @@ Assignment/
 ├── expenses_export.csv
 ├── README.md
 ├── SCOPE.md
-├── DECISIONS.md
-└── AI_USAGE.md
+└── DECISIONS.md
 ```
-
-## AI Used
-See `AI_USAGE.md` for full details. Primary tool: **Claude (Anthropic)** via Antigravity agent.
