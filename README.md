@@ -82,5 +82,6 @@ Assignment/
 ├── expenses_export.csv
 ├── README.md
 ├── SCOPE.md
-└── DECISIONS.md
+├── DECISIONS.md
+└── AI_USAGE.md
 ```
